@@ -1,16 +1,15 @@
-import express from "express";
-import https from "https";
-
-
-const server = https.createServer();
-
-server.listen(3000, () => {
-    console.log("Server is running on port 3000");
-})
+import express, { json } from 'express';
+import { registerService } from './config/consul';
+import customerRoutes from './routes/customerRoutes';
 
 const app = express();
+const PORT = 3001;
 
+app.use(json());
+app.use('/customer', customerRoutes);
 
-app.get("/health", (req, res) => {
-     res.json({ status: "Ok" });
-})
+registerService('customer-management', 'customer-management-id', PORT);
+
+app.listen(PORT, () => {
+  console.log(`Customer Management Service running on port ${PORT}`);
+});
