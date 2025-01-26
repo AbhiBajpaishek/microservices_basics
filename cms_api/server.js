@@ -1,12 +1,15 @@
+import {} from 'dotenv/config';
 import express, { json } from 'express';
-import { registerService } from './config/consul';
-import customerRoutes from './routes/customerRoutes';
+import { registerService } from './src/config/consul.js';
+import customerRoutes from './src/routes/customerRoutes.js';
+import { errorHandler } from './src/middlewares/errorHandler.js';
 
 const app = express();
-const PORT = 3001;
+const PORT = process.env.CUSTOMER_SERVICE_PORT || 3001;
 
 app.use(json());
-app.use('/customer', customerRoutes);
+app.use('/', customerRoutes);
+app.use(errorHandler);
 
 registerService('customer-management', 'customer-management-id', PORT);
 

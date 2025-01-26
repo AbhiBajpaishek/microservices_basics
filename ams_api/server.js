@@ -1,12 +1,15 @@
 import express, { json } from 'express';
-import accountRoutes from './routes/accountRoutes';
-import { registerService } from './config/consul';
+import { registerService } from './src/config/consul.js';
+import accountRoutes from "./src/routes/accountRoutes.js";
+import { errorHandler } from './src/middlewares/errorHandler.js';
+import "dotenv/config";
 
 const app = express();
-const PORT = 3002;
+const PORT = process.env.ACCOUNT_SERVICE_PORT || 3002;
 
 app.use(json());
-app.use('/account', accountRoutes);
+app.use('/', accountRoutes);
+app.use(errorHandler);
 
 registerService('account-management', 'account-management-id', PORT);
 

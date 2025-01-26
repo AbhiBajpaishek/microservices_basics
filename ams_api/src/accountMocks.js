@@ -1,6 +1,6 @@
-export const accounts = [
+export const mockAccounts = [
   {
-    accountId: 104,
+    accountId: "104",
     customerId: 4,
     balance: 1000,
   },
