@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "de8da3e5-d0b9-4eb6-bfac-07dce18da651",
+		"name": "Microservices Basics",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "11047542"
+	},
+	"item": [
+		{
+			"name": "Withdrarw-money",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountId\": 101,\r\n    \"customerId\": 1,\r\n    \"amount\":700\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:4000/accounts/withdraw-money"
+			},
+			"response": []
+		},
+		{
+			"name": "add-money",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountId\": 102,\r\n    \"customerId\": 2,\r\n    \"amount\":700\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:4000/accounts/add-money"
+			},
+			"response": []
+		},
+		{
+			"name": "add customer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Shink\",\r\n    \"email\":\"dummy@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:4000/customers/"
+			},
+			"response": []
+		},
+		{
+			"name": "update customer",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"Shinker\",\r\n    \"email\":\"dummy@gmail.com\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:4000/customers/2d0d8b85-198f-41cf-8069-d0f972076938"
+			},
+			"response": []
+		},
+		{
+			"name": "getAccountById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountId\": 101,\r\n    \"customerId\": 1,\r\n    \"amount\":700\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:4000/accounts/11"
+			},
+			"response": []
+		},
+		{
+			"name": "getAllCustomers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountId\": 101,\r\n    \"customerId\": 1,\r\n    \"amount\":700\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:4000/customers"
+			},
+			"response": []
+		},
+		{
+			"name": "getCustomerById",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountId\": 101,\r\n    \"customerId\": 1,\r\n    \"amount\":700\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:4000/customers/4"
+			},
+			"response": []
+		},
+		{
+			"name": "deleteCustomerById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountId\": 101,\r\n    \"customerId\": 1,\r\n    \"amount\":700\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:4000/customers/2d0d8b85-198f-41cf-8069-d0f972076938"
+			},
+			"response": []
+		},
+		{
+			"name": "deleteAccountById",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"accountId\": 101,\r\n    \"customerId\": 1,\r\n    \"amount\":700\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:4000/accounts/102"
+			},
+			"response": []
+		}
+	]
+}

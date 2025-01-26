@@ -1,8 +1,10 @@
-import {} from 'dotenv/config';
 import express, { json } from 'express';
+import dotenv from 'dotenv';
 import { registerService } from './src/config/consul.js';
 import customerRoutes from './src/routes/customerRoutes.js';
 import { errorHandler } from './src/middlewares/errorHandler.js';
+
+dotenv.config();
 
 const app = express();
 const PORT = process.env.CUSTOMER_SERVICE_PORT || 3001;
